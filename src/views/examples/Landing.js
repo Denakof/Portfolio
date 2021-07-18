@@ -17,34 +17,43 @@
 */
 import React from "react";
 // nodejs library that concatenates classes
+import classnames from "classnames";
+import promo1 from "assets/img/theme/promo-1.png";
+import cardImg from "assets/img/theme/img-1-1200x1000.jpg";
+import ill2 from "assets/img/ill/ill-2.svg";
+import team1 from "assets/img/theme/team-1-800x800.jpg";
+import team2 from "assets/img/theme/team-2-800x800.jpg";
+import team3 from "assets/img/theme/team-3-800x800.jpg";
+import team4 from "assets/img/theme/team-4-800x800.jpg";
+import landing1 from "assets/img/theme/port1.png";
+import landing3 from "assets/img/theme/port3.png";
+import landing2 from "assets/img/theme/port2.png";
+import landing4 from "assets/img/theme/port4.png";
+import profile from "assets/img/theme/profile.jpg";
+import { Link } from "react-router-dom";
+// reactstrap components
+import {
+  Badge,
+  Button,
+  Card,
+  CardBody,
+  CardImg,
+  FormGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 
-// import port1 from "assets/img/port1.png";
-// import port2 from "assets/img/port2.png";
-// import port3 from "assets/img/port3.png";
+// core components
+import DemoNavbar from "components/Navbars/DemoNavbar.js";
+import CardsFooter from "components/Footers/CardsFooter.js";
 
-// // reactstrap components
-// import {
-//   Badge,
-//   Button,
-//   Card,
-//   CardBody,
-//   CardImg,
-//   FormGroup,
-//   Input,
-//   InputGroupAddon,
-//   InputGroupText,
-//   InputGroup,
-//   Container,
-//   Row,
-//   Col
-// } from "reactstrap";
-
-// // core components
-// import DemoNavbar from "components/Navbars/DemoNavbar.js";
-// import CardsFooter from "components/Footers/CardsFooter.js";
-
-// // index page sections
-// import Download from "../IndexSections/Download.js";
+// index page sections
+import Download from "../IndexSections/Download.js";
 
 class Landing extends React.Component {
   state = {};
@@ -72,7 +81,8 @@ class Landing extends React.Component {
                 <span />
                 <span />
               </div>
-
+              
+              {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,166 +101,68 @@ class Landing extends React.Component {
             </section>
             {/* 1st Hero Variation */}
           </div>
-          <div>
-            <h1> Projects:</h1>
-            {/* <img src={port1} />          <img src={port2} />
-
-            <img src={port3} /> */}
-
-          </div>
-          {/* <section className="section section-lg">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-md-2" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={promo1}
-                  />
-                </Col>
-                <Col className="order-md-1" md="6">
-                  <div className="pr-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
-                      <i className="ni ni-settings-gear-65" />
-                    </div>
-                    <h3>Awesome features</h3>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <ul className="list-unstyled mt-5">
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Carefully crafted components
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-html5" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Super friendly support team
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section> */}
-          {/* <section className="section bg-secondary">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col md="6">
-                  <Card className="bg-default shadow border-0">
-                    <CardImg
-                      alt="..."
-                      src={cardImg}
-                      top
-                    />
-                    <blockquote className="card-blockquote">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="svg-bg"
-                        preserveAspectRatio="none"
-                        viewBox="0 0 583 95"
-                      >
-                        <polygon
-                          className="fill-default"
-                          points="0,52 583,95 0,95"
-                        />
-                        <polygon
-                          className="fill-default"
-                          opacity=".2"
-                          points="0,42 583,95 683,0 0,95"
-                        />
-                      </svg>
-                      <h4 className="display-3 font-weight-bold text-white">
-                        Portfolio
-                      </h4>
-                      <p className="lead text-italic text-white">
-                      you can see some of my amazing well-done 
-                      </p>
-                    </blockquote>
-                  </Card>
-                </Col>
-                <Col md="6">
-                  <div className="pl-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                      <i className="ni ni-settings" />
-                    </div>
-                    <h3>Our customers</h3>
-                    <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <a
-                      className="font-weight-bold text-warning mt-5"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
+         
+          <Container className="container-lg">
+            <Row>
+              <Col className="mb-5 mb-md-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link
+                    to={{
+                      pathname:
+                        "https://okashininjas.github.io/Okashi/index.html",
+                    }}
+                    target="_blank"
+                  >
+                    <CardImg alt="..." src={landing1} />
+                  </Link>
+                </Card>
+              </Col>
+              <br></br>
+              <Col className="mb-5 mb-lg-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                <Link
+                    to={{
+                      pathname:
+                      "https://denakof.github.io/DK/"
+                    }}
+                    target="_blank"
                     >
-                      A beautiful UI Kit for impactful websites
-                    </a>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section> */}
-
-          <section className="section section-lg">
-
-          </section>
-
+                    <CardImg alt="..." src={landing2} />
+                  </Link>
+                </Card>
+              </Col>{" "}
+              <br></br>
+              <Col className="mb-5 mb-lg-0" md="6">
+                <Card className="card-lift--hover shadow border-0">
+                <Link
+                    to={{
+                      pathname:
+                      "https://denakof.github.io/chocolate-Pizza/",
+                    }}
+                    target="_blank"
+                  >
+                    <CardImg alt="..." src={landing3} />
+                  </Link>
+                </Card>
+              </Col>
+              <br></br>
+            <Col className="mb-5 mb-lg-0" md="6">
+              <Card className="card-lift--hover shadow border-0">
+              <Link
+                    to={{
+                      pathname:
+                        "https://dena-firstweek.netlify.app/"
+                    }}
+                    target="_blank"
+                  >
+                  <CardImg alt="..." src={landing4} />
+                </Link>
+              </Card>
+            </Col>
+            </Row>
+          </Container>
           <section className="section section-lg bg-gradient-default">
-            {/* <Container className="pt-lg pb-300">
+            <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 <Col lg="10">
                   <h2 className="display-3 text-white">Build something</h2>
@@ -294,13 +206,104 @@ class Landing extends React.Component {
                   </p>
                 </Col>
               </Row>
-            </Container> */}
+            </Container>
             {/* SVG separator */}
-
-
+            <div className="separator separator-bottom separator-skew zindex-100">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                version="1.1"
+                viewBox="0 0 2560 100"
+                x="0"
+                y="0"
+              >
+                <polygon
+                  className="fill-white"
+                  points="2560 0 2560 100 0 100"
+                />
+              </svg>
+            </div>
           </section>
-
-          <Download />
+          <section className="section section-lg pt-lg-0 section-contact-us">
+            <Container>
+              <Row className="justify-content-center mt--300">
+                <Col lg="8">
+                  <Card className="bg-gradient-secondary shadow">
+                    <CardBody className="p-lg-5">
+                      <h4 className="mb-1">Want to work with us?</h4>
+                      <p className="mt-0">
+                        Your project is very important to us.
+                      </p>
+                      <FormGroup
+                        className={classnames("mt-5", {
+                          focused: this.state.nameFocused,
+                        })}
+                      >
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-user-run" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input
+                            placeholder="Your name"
+                            type="text"
+                            onFocus={() => this.setState({ nameFocused: true })}
+                            onBlur={() => this.setState({ nameFocused: false })}
+                          />
+                        </InputGroup>
+                      </FormGroup>
+                      <FormGroup
+                        className={classnames({
+                          focused: this.state.emailFocused,
+                        })}
+                      >
+                        <InputGroup className="input-group-alternative">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-email-83" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input
+                            placeholder="Email address"
+                            type="email"
+                            onFocus={() =>
+                              this.setState({ emailFocused: true })
+                            }
+                            onBlur={() =>
+                              this.setState({ emailFocused: false })
+                            }
+                          />
+                        </InputGroup>
+                      </FormGroup>
+                      <FormGroup className="mb-4">
+                        <Input
+                          className="form-control-alternative"
+                          cols="80"
+                          name="name"
+                          placeholder="Type a message..."
+                          rows="4"
+                          type="textarea"
+                        />
+                      </FormGroup>
+                      <div>
+                        <Button
+                          block
+                          className="btn-round"
+                          color="default"
+                          size="lg"
+                          type="button"
+                        >
+                          Send Message
+                        </Button>
+                      </div>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+          {/* <Download /> */}
         </main>
         <CardsFooter />
       </>
